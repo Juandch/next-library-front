@@ -15,6 +15,10 @@ import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { IndexAuthorsComponent } from './components/index-authors/index-authors.component';
+import { ShowAuthorComponent } from './components/show-author/show-author.component';
+import { CreateAuthorComponent } from './components/create-author/create-author.component';
+import { EditAuthorComponent } from './components/edit-author/edit-author.component';
 
 @NgModule({
   imports: [
@@ -32,7 +36,7 @@ import { AppRoutingModule } from './app-routing.module';
     AuthModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, IndexAuthorsComponent, ShowAuthorComponent, CreateAuthorComponent, EditAuthorComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

@@ -1,0 +1,15 @@
+<form #registerForm="ngForm" (ngSubmit)="createAuthor(registerForm)">
+  <div>
+    <label for="name">Nombres</label>
+    <input class="" name="name" [(ngModel)]="author.name" type="text" placeholder="Nombre completo" required />
+  </div>
+
+  <div class="col-md-4">
+    <label for="gender" class="form-label">Género</label>
+    <select class="" name="gender" [(ngModel)]="author.gender" required>
+      <option value="" disabled selected>Seleccionar</option>
+      <option value="Masculino">Masculino</option>
+      <option value="Femenino">Femenino</option>
+    </select>
+  </div>
+</form>

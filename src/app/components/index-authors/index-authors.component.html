@@ -1,0 +1,26 @@
+<h1>Autores</h1>
+
+<button [routerLink]="['/authors/create']">Crear autor</button>
+
+<table border>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Fecha de nacimiento</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let author of authors; let indice = index">
+      <td>{{ indice + 1 }}</td>
+      <td>{{ author.name }}</td>
+      <td>{{ author.bth_day | date: 'mediumDate' }}</td>
+      <td>
+        <button [routerLink]="['/authors', author.id]">Ver</button>
+        <button>Editar</button>
+        <button (click)="deleteAuthor(author.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

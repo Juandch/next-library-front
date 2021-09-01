@@ -37,6 +37,10 @@
             <span translate>About</span>
           </a>
           <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/authors" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+            <span translate>Autores</span>
+          </a>
+          <mat-divider></mat-divider>
         </mat-list>
       </nav>
     </mat-sidenav>

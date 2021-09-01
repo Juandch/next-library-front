@@ -1,0 +1,13 @@
+<h1>Nombre: {{ author.name }}</h1>
+
+<h2>Género: {{ author.gender }}</h2>
+
+<h2>Fecha de nacimiento: {{ author.bth_day | date: 'mediumDate' }}</h2>
+
+<h3>Biografía: {{ author.bio }}</h3>
+
+<h2>Libros disponibles</h2>
+
+<ul *ngFor="let book of author_books">
+  <li>{{ book.title }}</li>
+</ul>
