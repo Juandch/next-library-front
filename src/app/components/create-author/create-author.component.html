@@ -1,10 +1,12 @@
+<h1>Registrar Autor</h1>
+
 <form #registerForm="ngForm" (ngSubmit)="createAuthor(registerForm)">
   <div>
     <label for="name">Nombres</label>
     <input class="" name="name" [(ngModel)]="author.name" type="text" placeholder="Nombre completo" required />
   </div>
 
-  <div class="col-md-4">
+  <div class="">
     <label for="gender" class="form-label">Género</label>
     <select class="" name="gender" [(ngModel)]="author.gender" required>
       <option value="" disabled selected>Seleccionar</option>
@@ -12,4 +14,18 @@
       <option value="Femenino">Femenino</option>
     </select>
   </div>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Fecha de nacimiento</mat-label>
+    <input name="date_picker" [(ngModel)]="date_picker" matInput [matDatepicker]="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div>
+    <label for="bio">Biografía</label>
+    <textarea name="bio" [(ngModel)]="author.bio" rows="4" cols="50"></textarea>
+  </div>
+
+  <button class="" type="submit">Crear author</button>
 </form>

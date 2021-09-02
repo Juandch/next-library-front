@@ -9,12 +9,12 @@ export class AuthorService {
   constructor(private _http: HttpClient) {}
 
   getAuthors(): Observable<any> {
-    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this._http.get('authors/', { headers: headers });
   }
 
   showAuthor(id: any): Observable<any> {
-    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this._http.get('authors/' + id, { headers: headers });
   }
 
@@ -25,6 +25,11 @@ export class AuthorService {
 
   createAuthor(data: any): Observable<any> {
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this._http.post('authors', data, { headers: headers });
+    return this._http.post('/authors', data, { headers: headers });
+  }
+
+  updateAuthor(id: any, data: any): Observable<any> {
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this._http.put('/authors/' + id, data, { headers: headers });
   }
 }

@@ -11,6 +11,7 @@ const routes: Routes = [
     { path: 'about', loadChildren: () => import('./about/about.module').then((m) => m.AboutModule) },
     { path: 'authors', component: IndexAuthorsComponent },
     { path: 'authors/create', component: CreateAuthorComponent },
+    { path: 'authors/edit/:id', component: EditAuthorComponent },
     { path: 'authors/:id', component: ShowAuthorComponent },
   ]),
   // Fallback when no prior route is matched

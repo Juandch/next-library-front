@@ -1,1 +1,31 @@
-<p>edit-author works!</p>
+<h1>Editar Autor</h1>
+
+<form #updateForm="ngForm" (ngSubmit)="updateAuthor(updateForm)">
+  <div>
+    <label for="name">Nombres</label>
+    <input class="" name="name" [(ngModel)]="getAuthor.name" type="text" placeholder="Nombre completo" required />
+  </div>
+
+  <div class="">
+    <label for="gender" class="form-label">Género</label>
+    <select class="" name="gender" [(ngModel)]="getAuthor.gender" required>
+      <option value="" disabled selected>Seleccionar</option>
+      <option value="Masculino">Masculino</option>
+      <option value="Femenino">Femenino</option>
+    </select>
+  </div>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Fecha de nacimiento</mat-label>
+    <input name="date_picker" [(ngModel)]="getAuthor.bth_day" matInput [matDatepicker]="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div>
+    <label for="bio">Biografía</label>
+    <textarea name="bio" [(ngModel)]="getAuthor.bio"></textarea>
+  </div>
+
+  <button class="" type="submit">Actualizar author</button>
+</form>
